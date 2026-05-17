@@ -1,0 +1,27 @@
+services:
+  jamulus-directory:
+    image: dtinth/jamulus:main
+    pull_policy: always
+    init: true
+    network_mode: host
+    environment:
+      JAMULUS_PORT: 22624
+      JAMULUS_MAX_USERS: 1
+      DIRECTORY_MODE: "1"
+      DIRECTORY_FILE: /data/serverlist.csv
+      SERVER_NAME: "Any Genre Asia"
+      SERVER_LOCATION: "Bangkok;TH"
+      SERVER_WELCOME_MESSAGE: >-
+        Asia Directory — hosted by dtinth (Thailand)
+        | Info &amp; contact: github.com/dtinth/jamulus-asia-directory
+    volumes:
+      - serverlist:/data
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  serverlist:

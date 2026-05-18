@@ -13,7 +13,7 @@ services:
       SERVER_LOCATION: "Bangkok;TH"
       SERVER_WELCOME_MESSAGE: >-
         Asia Directory — hosted by dtinth (Thailand)
-        | Info &amp; contact: github.com/dtinth/jamulus-asia-directory
+        | Info &amp; contact: <a href="https://github.com/dtinth/jamulus-asia-directory">github.com/dtinth/jamulus-asia-directory</a>
     volumes:
       - serverlist:/data
     restart: unless-stopped
